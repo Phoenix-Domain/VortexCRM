@@ -1,4 +1,4 @@
-# LeadCRM – Client Management App
+# VortexCRM – Client Management App
 
 🎯 A lightweight CRM dashboard for small businesses to collect and manage leads.
 
