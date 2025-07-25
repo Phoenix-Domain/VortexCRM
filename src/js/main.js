@@ -20,8 +20,6 @@ const userStatus = document.querySelector('#status');
 const submitBtn = document.querySelector('#submitBtn');
 const dashBoard = document.querySelector('#dashBoard');
 
-//1. User types in value
-//1a. User submits the value
 
 submitBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -36,12 +34,11 @@ submitBtn.addEventListener('click', e => {
 
   let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
-  console.log(user)
+  
   
 })
-//2. I collect the value using eventlisteners
-//3. I create a new user object
-//4. I pass the input values as parameters in the user object
+
+
 //5. I create 7 new td elements
 //6. I pass the appropriate values as it's textContent
 //7. I create a new tr element
