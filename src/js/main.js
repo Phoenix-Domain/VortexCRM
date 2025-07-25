@@ -20,6 +20,12 @@ const userStatus = document.querySelector('#status');
 const submitBtn = document.querySelector('#submitBtn');
 const dashBoard = document.querySelector('#dashBoard');
 
+let userArray = getItem() || [];
+
+if(userArray.length > 0){
+  userArray.forEach(item => createTR(item))
+}
+
 
 submitBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -35,6 +41,10 @@ submitBtn.addEventListener('click', e => {
   let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
   createTR(user);
+
+  userArray.push(user);
+
+  saveItem(userArray);
   
   clearInputs();
 });
