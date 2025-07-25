@@ -77,9 +77,3 @@ function clearInputs(){
 }
 
 
-//5. I create 7 new td elements
-//6. I pass the appropriate values as it's textContent
-//7. I create a new tr element
-//8. I append all the td elements into the tr element
-//9. I append the tr element in the dashBoard as a new row
-//10. I clear the input
