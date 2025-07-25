@@ -20,7 +20,8 @@ const submitBtn = document.querySelector('#submitBtn');
 const dashBoard = document.querySelector('#dashBoard');
 
 //1. User types in value
-//2. I collect the value
+//1a. User submits the value
+//2. I collect the value using eventlisteners
 //3. I create a new user object
 //4. I pass the input values as parameters in the user object
 //5. I create 7 new td elements
