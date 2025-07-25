@@ -15,5 +15,6 @@ class MakeUser {
 }
 
 const formInputs = document.querySelectorAll('input'); //All input elements in the DOM
-const userStatus = document.querySelector('#status')
+const userStatus = document.querySelector('#status');
+const submitBtn = document.querySelector('#submitBtn')
 
