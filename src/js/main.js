@@ -13,3 +13,7 @@ class MakeUser {
     this.time = time;
   }
 }
+
+const formInputs = document.querySelectorAll('input'); //All input elements in the DOM
+
+console.log(formInputs)
