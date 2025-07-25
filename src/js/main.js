@@ -34,7 +34,9 @@ submitBtn.addEventListener('click', e => {
   const time = formInputs[6].value.trim();
   const status = userStatus.value.trim();
 
-  let user = new MakeUser(name,email,phone,service,source,date,time,status)
+  let user = new MakeUser(name,email,phone,service,source,status,date,time);
+
+  console.log(user)
   
 })
 //2. I collect the value using eventlisteners
