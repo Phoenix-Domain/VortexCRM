@@ -36,6 +36,7 @@ submitBtn.addEventListener('click', e => {
 
   createTR(user);
   
+  clearInputs();
 });
 
 //TR stands for Table Row. i.e userTR = userTableRow
@@ -68,6 +69,11 @@ function createTR(user){
   dashBoard.append(userTR)
   
 
+}
+
+function clearInputs(){
+  formInputs.forEach(input => {input.value = '';});
+  userStatus.value = 'select';
 }
 
 
