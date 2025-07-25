@@ -2,13 +2,14 @@ import '../css/style.css'
 
 let userId = 0;
 class MakeUser {
-  constructor(name,email,phone,service,source,date,time){
+  constructor(name,email,phone,service,source,status,date,time){
     this.id = userId++;
     this.name = name;
     this.email = email;
     this.phone = phone;
     this.service = service;
-    this.source = source
+    this.source = source;
+    this.status = status;
     this. date = date;
     this.time = time;
   }
@@ -24,6 +25,16 @@ const dashBoard = document.querySelector('#dashBoard');
 
 submitBtn.addEventListener('click', e => {
   e.preventDefault();
+  const name = formInputs[0].value.trim();
+  const email = formInputs[1].value.trim();
+  const phone = formInputs[2].value.trim();
+  const service = formInputs[3].value.trim();
+  const source = formInputs[4].value.trim();
+  const date = formInputs[5].value.trim();
+  const time = formInputs[6].value.trim();
+  const status = userStatus.value.trim();
+
+  let user = new MakeUser(name,email,phone,service,source,date,time,status)
   
 })
 //2. I collect the value using eventlisteners
