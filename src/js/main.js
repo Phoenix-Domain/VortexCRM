@@ -77,3 +77,10 @@ function clearInputs(){
 }
 
 
+function saveItem(item){
+  localStorage.setItem('Client', JSON.stringify(item));
+}
+
+function getItem(){
+  return JSON.parse(localStorage.getItem('Client'));
+}
