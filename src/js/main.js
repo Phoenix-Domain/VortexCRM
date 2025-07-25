@@ -34,9 +34,41 @@ submitBtn.addEventListener('click', e => {
 
   let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
+  createTR(user);
   
+});
+
+//TR stands for Table Row. i.e userTR = userTableRow
+function createTR(user){
+  const nameTD = document.createElement('td');
+  const emailTD = document.createElement('td');
+  const phoneTD = document.createElement('td');
+  const serviceTD = document.createElement('td');
+  const sourceTD = document.createElement('td');
+  const statusTD = document.createElement('td');
+  const dateTD = document.createElement('td');
+  const timeTD = document.createElement('td');
+
   
-})
+  const userTR = document.createElement('tr');
+
+
+  //TD stands for Table Data. i.e nameTD === nameTableData
+  nameTD.textContent = user.name;
+  emailTD.textContent = user.email;
+  phoneTD.textContent = user.phone;
+  serviceTD.textContent = user.service;
+  sourceTD.textContent = user.source;
+  statusTD.textContent = user.status;
+  dateTD.textContent = user.date;
+  timeTD.textContent = user.time;
+
+  userTR.append(nameTD,emailTD,phoneTD,serviceTD,sourceTD,statusTD,dateTD,timeTD);
+
+  dashBoard.append(userTR)
+  
+
+}
 
 
 //5. I create 7 new td elements
