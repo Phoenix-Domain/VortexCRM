@@ -21,6 +21,11 @@ const dashBoard = document.querySelector('#dashBoard');
 
 //1. User types in value
 //1a. User submits the value
+
+submitBtn.addEventListener('click', e => {
+  e.preventDefault();
+  
+})
 //2. I collect the value using eventlisteners
 //3. I create a new user object
 //4. I pass the input values as parameters in the user object
