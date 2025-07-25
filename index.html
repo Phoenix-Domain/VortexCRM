@@ -14,29 +14,29 @@
     </header>
     
     <main class="mt-10 p-4">
-      <form action="" class="border rounded-xl p-3 *:my-10  grid-cols-2 w-fit m-auto">
-        <article>
+      <form action="" class="border rounded-xl p-5  w-fit m-auto">
+        <article class="my-5 *:block">
           <label for="name">Name:</label>
-          <input type="text" id="name" class="border mr-5">
+          <input type="text" id="name" class="border py-2 pr-16 pl-2">
 
           <label for="email">Email:</label>
-          <input type="text" id="email" class="border">
+          <input type="text" id="email" class="border py-2 pr-16 pl-2">
         </article>
 
-        <article>
+        <article class="my-5 *:block">
           <label for="phone">Phone:</label>
-          <input type="number" id="phone" class="border mr-5">
+          <input type="number" id="phone" class="border py-2 pr-16 pl-2">
 
           <label for="service">Service:</label>
-          <input type="text" id="service" class="border">
+          <input type="text" id="service" class="border py-2 pr-16 pl-2">
         </article>
 
-       <article>
+       <article class="my-5 *:block">
         <label for="source">Source:</label>
-        <input type="text" id="source" class="border mr-5">
+        <input type="text" id="source" class="border py-2 pr-16 pl-2">
 
         <label for="status">Status:</label>
-        <select name="status" id="status" class="border">
+        <select name="status" id="status" class="border py-2 pr-16 pl-2">
           <option value="select">Select Status</option>
           <option value="new">new</option>
           <option value="follow-up">Follow-up</option>
@@ -45,22 +45,22 @@
 
        </article>
 
-        <article>
+        <article class="my-2 *:block">
           <label for="date">Date:</label>
-          <input type="date" id="date" class="border mr-5">
+          <input type="date" id="date" class="border py-2 pr-16 pl-2">
 
           <label for="time">Time:</label>
-          <input type="time" id="time" class="border">
+          <input type="time" id="time" class="border py-2 pr-16 pl-2">
         </article>
 
-        <button type="submit">Submit</button>
+        <button type="submit" class="py-2 px-5 rounded-full border">Submit</button>
       </form>
 
-      <section id="dashBoard" class="border my-5">
+      <section id="dashBoard" class="border my-5 rounded-xl p-3 overflow-x-auto">
         <caption>CRM Dashboard</caption>
-        <table class="border">
+        <table class="border mt-2 w-full px-3">
           <thead>
-            <tr>
+            <tr class="*:py-4 *:px-4">
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
