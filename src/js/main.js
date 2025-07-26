@@ -87,6 +87,10 @@ function createList(user){
     deleteItem(userList);
     userArray = userArray.filter(item => item.id !== user.id)
     saveItem(userArray);
+  });
+
+  editBtn.addEventListener('click', e => {
+    
   })
 
   userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
