@@ -91,8 +91,6 @@ function createList(user){
 
   userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
 
-  userList.classList.add('bg-red-500','my-4','p-2','grid','grid-cols-2','gap-2','*:text-wrap')
-
   leadsList.append(userList)
   
 
