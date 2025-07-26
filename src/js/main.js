@@ -47,8 +47,6 @@ submitBtn.addEventListener('click', e => {
   saveItem(userArray);
   
   clearInputs();
-
-  console.log('twist')
 });
 
 
