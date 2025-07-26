@@ -15,7 +15,8 @@ class MakeUser {
   }
 }
 
-const formInputs = document.querySelectorAll('input'); //All input elements in the DOM
+const formInputs = document.querySelectorAll('.formInput'); //All input elements in the DOM
+const formUpdateInputs = document.querySelectorAll('.updateFormInput');
 const userStatus = document.querySelector('#status');
 const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
@@ -90,7 +91,7 @@ function createList(user){
   });
 
   editBtn.addEventListener('click', e => {
-    
+
   })
 
   userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
