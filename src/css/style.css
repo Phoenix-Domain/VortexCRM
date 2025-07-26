@@ -27,4 +27,12 @@
   li{
     @apply bg-red-500 my-4 p-2 grid grid-cols-2 gap-2 *:text-wrap
   }
+
+  form{
+    @apply border rounded-xl p-5  w-fit m-auto
+  }
+
+  ol{
+    @apply list-decimal pl-5
+  }
 }
