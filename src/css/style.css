@@ -30,7 +30,7 @@
     @apply text-2xl text-center font-bold mb-4
   }
   li{
-    @apply bg-red-500 my-4 p-2 grid grid-cols-2 gap-2 *:text-wrap
+    @apply bg-red-500 my-4 p-2
   }
 
   form{
@@ -39,5 +39,8 @@
 
   ol{
     @apply list-decimal pl-5
+  }
+  main{
+    @apply mt-10 p-4 flex flex-wrap justify-center align-middle
   }
 }
