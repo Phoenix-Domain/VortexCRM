@@ -109,10 +109,6 @@ function createList(user){
   editBtn.addEventListener('click', e => {
     e.preventDefault();
 
-    updateForm.classList.toggle('hidden');
-
-    console.log(updateForm)
-
     formUpdateInputs[0].value = user.name;
     formUpdateInputs[1].value = user.email;
     formUpdateInputs[2].value = user.phone;
@@ -122,6 +118,7 @@ function createList(user){
     formUpdateInputs[6].value = user.date;
     formUpdateInputs[7].value = user.time;
 
+    updateForm.classList.remove('hidden');
     
   })
 
