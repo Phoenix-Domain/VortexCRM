@@ -15,6 +15,10 @@
   .btnPrimary{
     @apply py-2 px-5 rounded-full border max-w-fit m-auto
   }
+
+  .hiddenForm{
+    @apply hidden absolute m-auto top-50 left-50 bg-amber-600
+  }
 }
 
 @layer base{
