@@ -47,6 +47,8 @@ submitBtn.addEventListener('click', e => {
   saveItem(userArray);
   
   clearInputs();
+
+  console.log('twist')
 });
 
 
@@ -59,6 +61,7 @@ function createList(user){
   const status = document.createElement('p');
   const date = document.createElement('p');
   const time = document.createElement('p');
+  const delBtn = document.createElement('button');
 
   
   const userList = document.createElement('li');
@@ -73,7 +76,16 @@ function createList(user){
   date.textContent = user.date;
   time.textContent = user.time;
 
-  userList.append(name,email,phone,service,source,status,date,time);
+  delBtn.textContent = 'Delete Lead';
+
+  delBtn.addEventListener('click', e => {
+    e.preventDefault();
+    deleteItem(userList);
+    userArray = userArray.filter(item => item.id !== user.id)
+    saveItem(userArray);
+  })
+
+  userList.append(name,email,phone,service,source,status,date,time,delBtn);
 
   leadsList.append(userList)
   
@@ -92,4 +104,8 @@ function saveItem(item){
 
 function getItem(){
   return JSON.parse(localStorage.getItem('Client'));
+}
+
+function deleteItem(item){
+  item.remove();
 }
