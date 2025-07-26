@@ -59,6 +59,9 @@ submitBtn.addEventListener('click', e => {
 
   createList(user);
 
+  userArray.push(user); 
+  saveItem(userArray);
+
   userArray.push(user);
 
   saveItem(userArray);
@@ -91,6 +94,11 @@ updateBtn.addEventListener('click', e => {
 
 exportBtn.addEventListener('click', e => {
   e.preventDefault();
+
+  if(userArray.length === 0) {
+    alert('No leads to export!');
+    return;
+  }
   
   exportDataToCSV(userArray);
 });
@@ -102,14 +110,14 @@ function exportDataToCSV(data) {
 
   data.forEach(user => {
     const row = [
-      `"${user.name}"`,
-      `"${user.email}"`,
-      `"${user.phone}"`,
-      `"${user.service}"`,
-      `"${user.source}"`,
-      `"${user.status}"`,
-      `"${user.date}"`,
-      `"${user.time}"`
+      `"${user.name.replace(/"/g, '""')}"`,    
+      `"${user.email.replace(/"/g, '""')}"`,
+      `"${user.phone.replace(/"/g, '""')}"`,
+      `"${user.service.replace(/"/g, '""')}"`,
+      `"${user.source.replace(/"/g, '""')}"`,
+      `"${user.status.replace(/"/g, '""')}"`,
+      `"${user.date.replace(/"/g, '""')}"`,
+      `"${user.time.replace(/"/g, '""')}"`
     ].join(',');
     csvRows.push(row);
   });
