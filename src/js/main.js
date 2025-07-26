@@ -75,8 +75,12 @@ function createList(user){
   date.textContent = user.date;
   time.textContent = user.time;
 
-  delBtn.textContent = 'Delete Lead';
-  editBtn.textContent = 'Edit Lead';
+  delBtn.textContent = 'Delete';
+  editBtn.textContent = 'Edit';
+
+  delBtn.classList.add('btnPrimary');
+  editBtn.classList.add('btnPrimary');
+
 
   delBtn.addEventListener('click', e => {
     e.preventDefault();
