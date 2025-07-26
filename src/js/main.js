@@ -105,7 +105,7 @@ function createList(user){
   editBtn.textContent = 'Edit';
 
   delBtn.classList.add('btnPrimary');
-  editBtn.classList.add('btnPrimary');
+  editBtn.classList.add('btnPrimary', 'btnSecondary');
 
 
   delBtn.addEventListener('click', e => {
