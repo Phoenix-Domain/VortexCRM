@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme{
-  --color-freeCodeCamp: #0a0a23;
+  
 }
 
 @layer components{
@@ -9,7 +9,7 @@
     @apply my-5 *:block
   }
   .formInput,.formUpdateInput{
-    @apply rounded-xl py-2 pr-16 pl-2 bg-[#FFFFFF] text-gray-950
+    @apply rounded-xl py-2 pr-16 pl-2 bg-[#FFFFFF] text-gray-950 border-black border-2 outline-none focus:bg-gray-950 focus:text-white
   }
 
 
