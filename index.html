@@ -56,6 +56,48 @@
         <button type="submit" id="submitBtn" class="btnPrimary">Add lead</button>
       </form>
 
+      <form action="" class="hiddenForm">
+        <article class="article">
+          <label for="name">Name:</label>
+          <input type="text" id="name" class="formInput">
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="formInput">
+        </article>
+
+        <article class="article">
+          <label for="phone">Phone:</label>
+          <input type="number" id="phone" class="formInput">
+
+          <label for="service">Service:</label>
+          <input type="text" id="service" class="formInput">
+        </article>
+
+       <article class="article">
+        <label for="source">Source:</label>
+        <input type="text" id="source" class="formInput">
+
+        <label for="status">Status:</label>
+        <select name="status" id="status" class="formInput">
+          <option value="select">Select Status</option>
+          <option value="new">new</option>
+          <option value="follow-up">Follow-up</option>
+          <option value="closed">Closed</option>
+        </select>
+
+       </article>
+
+        <article class="article">
+          <label for="date">Date:</label>
+          <input type="date" id="date" class="formInput">
+
+          <label for="time">Time:</label>
+          <input type="time" id="time" class="formInput">
+        </article>
+
+        <button type="submit" id="updateBtn" class="btnPrimary">Update Lead</button>
+      </form>
+
       <section class="mt-10">
         <h2>Leads List</h2>
         <ol id="leadsList">
