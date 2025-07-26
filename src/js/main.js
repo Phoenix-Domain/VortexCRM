@@ -21,6 +21,7 @@ const updateBtn = document.querySelector('#updateBtn');
 const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
 const updateForm = document.querySelector('#updateForm');
+const leadForm = document.querySelector('#leadForm');
 
 let currentUserId = null; //To be used when updating the dshboard
 
@@ -72,8 +73,11 @@ updateBtn.addEventListener('click', e => {
   updateList(updatedUser);
 
   updateForm.classList.add('hidden');
-  
+    
+  leadForm.classList.remove('blur-sm');
+  leadsList.classList.remove('blur-sm');
 })
+
 
 
 function createList(user){
@@ -152,6 +156,14 @@ function createList(user){
     formUpdateInputs[7].value = user.time;
 
     updateForm.classList.remove('hidden');
+
+    if(!updateForm.classList.contains('hidden')){
+      leadForm.classList.add('blur-sm');
+      leadsList.classList.add('blur-sm');
+    }else{
+      leadForm.classList.remove('blur-sm');
+      leadsList.classList.remove('blur-sm');
+    }
     
   });
 
