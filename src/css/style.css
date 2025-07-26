@@ -24,6 +24,10 @@
   .hiddenForm{
     @apply absolute top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 bg-[#0a0a23] rounded shadow
   }
+
+  .btnDiv{
+    @apply flex gap-2 justify-center items-center mt-5
+  }
 }
 
 @layer base{
@@ -31,7 +35,7 @@
     @apply dark:bg-[#0f0f0f] dark:text-white
   }
   p{
-    @apply text-center text-lg mt-2
+    @apply text-center text-lg mb-5
   }
   h1{
     @apply font-mono font-bold text-center text-3xl
@@ -49,5 +53,9 @@
 
   main{
     @apply mt-10 p-4 flex flex-wrap justify-center align-middle gap-5
+  }
+
+  span{
+    @apply text-gray-400 font-semibold
   }
 }
