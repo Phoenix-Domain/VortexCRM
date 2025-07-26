@@ -18,7 +18,7 @@
   }
 
   .hiddenForm{
-    @apply absolute hidden top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-200 p-6 rounded shadow
+    @apply absolute top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-200 p-6 rounded shadow
   }
 }
 
