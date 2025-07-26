@@ -14,7 +14,11 @@
 
 
   .btnPrimary{
-    @apply py-2 px-5 rounded-full border max-w-fit m-auto
+    @apply py-2 px-5 rounded-full border max-w-fit m-auto hover:bg-white hover:text-[#0f0f0f] duration-200 ease-in-out
+  }
+
+  .btnSecondary{
+    @apply bg-white text-[#0f0f0f] hover:text-white hover:bg-[#0f0f0f]
   }
 
   .hiddenForm{
@@ -44,6 +48,6 @@
   }
 
   main{
-    @apply mt-10 p-4 flex flex-wrap justify-center align-middle
+    @apply mt-10 p-4 flex flex-wrap justify-center align-middle gap-5
   }
 }
