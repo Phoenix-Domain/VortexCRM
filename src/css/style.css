@@ -24,4 +24,7 @@
   h2{
     @apply text-2xl text-center font-bold mb-4
   }
+  li{
+    @apply bg-red-500 my-4 p-2 grid grid-cols-2 gap-2 *:text-wrap
+  }
 }
