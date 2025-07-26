@@ -36,16 +36,13 @@
     @apply text-2xl text-center font-bold mb-4
   }
   li{
-    @apply bg-red-500 my-4 p-2
+    @apply bg-[#181717]  rounded-xl p-5 w-fit m-auto
   }
 
   form{
     @apply bg-[#181717]  rounded-xl p-5 w-fit m-auto
   }
 
-  ol{
-    @apply list-decimal pl-5
-  }
   main{
     @apply mt-10 p-4 flex flex-wrap justify-center align-middle
   }
