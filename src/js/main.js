@@ -1,9 +1,9 @@
 import '../css/style.css'
 
-let userId = 0;
+
 class MakeUser {
-  constructor(name,email,phone,service,source,status,date,time){
-    this.id = userId++;
+  constructor(name,email,phone,service,source,status,date,time, id=crypto.randomUUID()){
+    this.id = id;
     this.name = name;
     this.email = email;
     this.phone = phone;
@@ -21,6 +21,8 @@ const updateBtn = document.querySelector('#updateBtn');
 const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
 const updateForm = document.querySelector('#updateForm');
+
+let currentUserId = null; //To be used when updating the dshboard
 
 
 let userArray = getItem() || [];
@@ -55,6 +57,7 @@ submitBtn.addEventListener('click', e => {
 
 updateBtn.addEventListener('click', e => {
   e.preventDefault();
+
   const name = formUpdateInputs[0].value.trim();
   const email = formUpdateInputs[1].value.trim();
   const phone = formUpdateInputs[2].value.trim();
@@ -63,6 +66,12 @@ updateBtn.addEventListener('click', e => {
   const status = formUpdateInputs[5].value.trim();
   const date = formUpdateInputs[6].value.trim();
   const time = formUpdateInputs[7].value.trim();
+
+  let updatedUser = new MakeUser(name,email,phone,service,source,status,date,time,currentUserId);
+
+  updateList(updatedUser);
+
+  updateForm.classList.add('hidden');
   
 })
 
@@ -109,6 +118,8 @@ function createList(user){
   editBtn.addEventListener('click', e => {
     e.preventDefault();
 
+    currentUserId = user.id;
+
     formUpdateInputs[0].value = user.name;
     formUpdateInputs[1].value = user.email;
     formUpdateInputs[2].value = user.phone;
@@ -129,9 +140,19 @@ function createList(user){
 
 }
 
+function updateList(user){
+  userArray = userArray.map(item => {
+    return item.id === user.id ? user : item;
+  });
+
+  saveItem(userArray);
+
+  leadsList.innerHTML = '';
+  userArray.forEach(item => createList(item))
+}
+
 function clearInputs(){
   formInputs.forEach(input => {input.value = '';});
-  userStatus.value = 'select';
 }
 
 
