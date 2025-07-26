@@ -22,13 +22,19 @@ const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
 const updateForm = document.querySelector('#updateForm');
 const leadForm = document.querySelector('#leadForm');
+const exportBtn = document.querySelector('#exportBtn');
 
 let currentUserId = null; //To be used when updating the dshboard
 
 
 let userArray = getItem() || [];
 
-if(userArray.length > 0){
+if(userArray.length <= 0){
+  let user = new MakeUser('Batubo Victory','victorybatubo76@gmail.com','08012345678','Web Development','Google','Pending','2023-10-01','10:00');
+
+  createList(user);
+
+}else if(userArray.length > 0){
   userArray.forEach(item => createList(item))
 }
 
@@ -45,7 +51,11 @@ submitBtn.addEventListener('click', e => {
   const time = formInputs[7].value.trim();
   
 
-  let user = new MakeUser(name,email,phone,service,source,status,date,time);
+  if(name === '' || email === '' || phone === '' || service === '' || source === '' || status === 'select' || date === '' || time === ''){
+    alert('Please fill in all fields');
+    return;
+  } else{
+    let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
   createList(user);
 
@@ -54,6 +64,7 @@ submitBtn.addEventListener('click', e => {
   saveItem(userArray);
   
   clearInputs();
+  }
 });
 
 updateBtn.addEventListener('click', e => {
@@ -76,8 +87,50 @@ updateBtn.addEventListener('click', e => {
     
   leadForm.classList.remove('blur-sm');
   leadsList.classList.remove('blur-sm');
-})
+});
 
+exportBtn.addEventListener('click', e => {
+  e.preventDefault();
+  
+  exportDataToCSV(userArray);
+});
+
+
+function exportDataToCSV(data) {
+  const headers = ['Name', 'Email', 'Phone', 'Service', 'Source', 'Status', 'Date', 'Time'];
+  const csvRows = [headers.join(',')];
+
+  data.forEach(user => {
+    const row = [
+      `"${user.name}"`,
+      `"${user.email}"`,
+      `"${user.phone}"`,
+      `"${user.service}"`,
+      `"${user.source}"`,
+      `"${user.status}"`,
+      `"${user.date}"`,
+      `"${user.time}"`
+    ].join(',');
+    csvRows.push(row);
+  });
+
+  const csvContent = csvRows.join('\n');
+  const blob = new Blob([csvContent], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement('a');
+  link.href = url;
+
+  const today = new Date().toISOString().split('T')[0];
+
+
+  link.download = `leads_${today}.csv`;
+  link.click();
+
+  URL.revokeObjectURL(url);
+  link.remove();
+  alert('CSV file has been downloaded successfully!');
+}
 
 
 function createList(user){
