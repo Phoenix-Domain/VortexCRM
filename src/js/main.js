@@ -20,6 +20,7 @@ const formUpdateInputs = document.querySelectorAll('.formUpdateInput');
 const updateBtn = document.querySelector('#updateBtn');
 const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
+const updateForm = document.querySelector('#updateForm');
 
 
 let userArray = getItem() || [];
@@ -59,9 +60,10 @@ updateBtn.addEventListener('click', e => {
   const phone = formUpdateInputs[2].value.trim();
   const service = formUpdateInputs[3].value.trim();
   const source = formUpdateInputs[4].value.trim();
-  const date = formUpdateInputs[5].value.trim();
-  const time = formUpdateInputs[6].value.trim();
-  const status = userStatus.value.trim();
+  const status = formUpdateInputs[5].value.trim();
+  const date = formUpdateInputs[6].value.trim();
+  const time = formUpdateInputs[7].value.trim();
+  
 })
 
 
@@ -105,7 +107,22 @@ function createList(user){
   });
 
   editBtn.addEventListener('click', e => {
+    e.preventDefault();
 
+    updateForm.classList.toggle('hidden');
+
+    console.log(updateForm)
+
+    formUpdateInputs[0].value = user.name;
+    formUpdateInputs[1].value = user.email;
+    formUpdateInputs[2].value = user.phone;
+    formUpdateInputs[3].value = user.service;
+    formUpdateInputs[4].value = user.source;
+    formUpdateInputs[5].value = user.status;
+    formUpdateInputs[6].value = user.date;
+    formUpdateInputs[7].value = user.time;
+
+    
   })
 
   userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
