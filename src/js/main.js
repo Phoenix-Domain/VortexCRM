@@ -60,6 +60,7 @@ function createList(user){
   const date = document.createElement('p');
   const time = document.createElement('p');
   const delBtn = document.createElement('button');
+  const editBtn = document.createElement('button');
 
   
   const userList = document.createElement('li');
@@ -75,6 +76,7 @@ function createList(user){
   time.textContent = user.time;
 
   delBtn.textContent = 'Delete Lead';
+  editBtn.textContent = 'Edit Lead';
 
   delBtn.addEventListener('click', e => {
     e.preventDefault();
@@ -83,7 +85,9 @@ function createList(user){
     saveItem(userArray);
   })
 
-  userList.append(name,email,phone,service,source,status,date,time,delBtn);
+  userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
+
+  userList.classList.add('bg-red-500','my-4','p-2','grid','grid-cols-2','gap-2','*:text-wrap')
 
   leadsList.append(userList)
   
