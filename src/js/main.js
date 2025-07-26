@@ -18,12 +18,12 @@ class MakeUser {
 const formInputs = document.querySelectorAll('input'); //All input elements in the DOM
 const userStatus = document.querySelector('#status');
 const submitBtn = document.querySelector('#submitBtn');
-const dashBoard = document.querySelector('#dashBoard');
+const leadsList = document.querySelector('#leadsList');
 
 let userArray = getItem() || [];
 
 if(userArray.length > 0){
-  userArray.forEach(item => createTR(item))
+  userArray.forEach(item => createList(item))
 }
 
 
@@ -40,7 +40,7 @@ submitBtn.addEventListener('click', e => {
 
   let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
-  createTR(user);
+  createList(user);
 
   userArray.push(user);
 
@@ -49,34 +49,33 @@ submitBtn.addEventListener('click', e => {
   clearInputs();
 });
 
-//TR stands for Table Row. i.e userTR = userTableRow
-function createTR(user){
-  const nameTD = document.createElement('td');
-  const emailTD = document.createElement('td');
-  const phoneTD = document.createElement('td');
-  const serviceTD = document.createElement('td');
-  const sourceTD = document.createElement('td');
-  const statusTD = document.createElement('td');
-  const dateTD = document.createElement('td');
-  const timeTD = document.createElement('td');
+
+function createList(user){
+  const name = document.createElement('p');
+  const email = document.createElement('p');
+  const phone = document.createElement('p');
+  const service = document.createElement('p');
+  const source = document.createElement('p');
+  const status = document.createElement('p');
+  const date = document.createElement('p');
+  const time = document.createElement('p');
 
   
-  const userTR = document.createElement('tr');
+  const userList = document.createElement('li');
 
 
-  //TD stands for Table Data. i.e nameTD === nameTableData
-  nameTD.textContent = user.name;
-  emailTD.textContent = user.email;
-  phoneTD.textContent = user.phone;
-  serviceTD.textContent = user.service;
-  sourceTD.textContent = user.source;
-  statusTD.textContent = user.status;
-  dateTD.textContent = user.date;
-  timeTD.textContent = user.time;
+  name.textContent = user.name;
+  email.textContent = user.email;
+  phone.textContent = user.phone;
+  service.textContent = user.service;
+  source.textContent = user.source;
+  status.textContent = user.status;
+  date.textContent = user.date;
+  time.textContent = user.time;
 
-  userTR.append(nameTD,emailTD,phoneTD,serviceTD,sourceTD,statusTD,dateTD,timeTD);
+  userList.append(name,email,phone,service,source,status,date,time);
 
-  dashBoard.append(userTR)
+  leadsList.append(userList)
   
 
 }
