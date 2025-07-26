@@ -77,6 +77,8 @@ updateBtn.addEventListener('click', e => {
 
 
 function createList(user){
+
+  // Create elements for each user detail
   const name = document.createElement('p');
   const email = document.createElement('p');
   const phone = document.createElement('p');
@@ -85,8 +87,28 @@ function createList(user){
   const status = document.createElement('p');
   const date = document.createElement('p');
   const time = document.createElement('p');
+  const btnDiv = document.createElement('article');
   const delBtn = document.createElement('button');
   const editBtn = document.createElement('button');
+
+  // Create spans for each user detail
+  const nameSpan = document.createElement('span');
+  const emailSpan = document.createElement('span');
+  const phoneSpan = document.createElement('span');
+  const sourceSpan = document.createElement('span');
+  const serviceSpan = document.createElement('span');
+  const dateSpan = document.createElement('span');
+  const timeSpan = document.createElement('span');
+  const statusSpan = document.createElement('span');
+
+  nameSpan.textContent = 'Name:';
+  emailSpan.textContent = 'Email:';  
+  phoneSpan.textContent = 'Phone:';
+  sourceSpan.textContent = 'Source:';
+  serviceSpan.textContent = 'Service:';
+  dateSpan.textContent = 'Date:';
+  timeSpan.textContent = 'Time:';
+  statusSpan.textContent = 'Status:';
 
   
   const userList = document.createElement('li');
@@ -131,9 +153,21 @@ function createList(user){
 
     updateForm.classList.remove('hidden');
     
-  })
+  });
 
-  userList.append(name,email,phone,service,source,status,date,time,delBtn,editBtn);
+  if(user.status === 'Pending'){
+    status.classList.add('text-yellow-500');
+  } else if(user.status === 'Completed'){
+    status.classList.add('text-green-500');
+  } else if(user.status === 'Cancelled'){
+    status.classList.add('text-red-500');
+  };
+
+  btnDiv.classList.add('btnDiv');
+
+  btnDiv.append(delBtn,editBtn);
+
+  userList.append(nameSpan,name,emailSpan,email,phoneSpan,phone,serviceSpan,service,sourceSpan,source,statusSpan,status,dateSpan,date,timeSpan,time,btnDiv);
 
   leadsList.append(userList)
   
