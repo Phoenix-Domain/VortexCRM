@@ -16,11 +16,11 @@ class MakeUser {
 }
 
 const formInputs = document.querySelectorAll('.formInput'); //All input elements in the DOM
-const formUpdateInputs = document.querySelectorAll('.updateFormInput');
+const formUpdateInputs = document.querySelectorAll('.formUpdateInput');
 const updateBtn = document.querySelector('#updateBtn');
-const userStatus = document.querySelector('#status');
 const submitBtn = document.querySelector('#submitBtn');
 const leadsList = document.querySelector('#leadsList');
+
 
 let userArray = getItem() || [];
 
@@ -36,9 +36,10 @@ submitBtn.addEventListener('click', e => {
   const phone = formInputs[2].value.trim();
   const service = formInputs[3].value.trim();
   const source = formInputs[4].value.trim();
-  const date = formInputs[5].value.trim();
-  const time = formInputs[6].value.trim();
-  const status = userStatus.value.trim();
+  const status = formInputs[5].value.trim();
+  const date = formInputs[6].value.trim();
+  const time = formInputs[7].value.trim();
+  
 
   let user = new MakeUser(name,email,phone,service,source,status,date,time);
 
@@ -50,6 +51,18 @@ submitBtn.addEventListener('click', e => {
   
   clearInputs();
 });
+
+updateBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const name = formUpdateInputs[0].value.trim();
+  const email = formUpdateInputs[1].value.trim();
+  const phone = formUpdateInputs[2].value.trim();
+  const service = formUpdateInputs[3].value.trim();
+  const source = formUpdateInputs[4].value.trim();
+  const date = formUpdateInputs[5].value.trim();
+  const time = formUpdateInputs[6].value.trim();
+  const status = userStatus.value.trim();
+})
 
 
 function createList(user){
