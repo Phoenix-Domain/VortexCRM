@@ -142,30 +142,36 @@ function exportDataToCSV(data) {
 
 
 function createList(user){
+  let HTML_Elements = {
+    paragraph: 'p',
+    span: 'span'
+  }
+
+  const { paragraph, span } = HTML_Elements
 
   // Create elements for each user detail
-  const name = document.createElement('p');
-  const email = document.createElement('p');
-  const phone = document.createElement('p');
-  const service = document.createElement('p');
-  const source = document.createElement('p');
-  const status = document.createElement('p');
-  const date = document.createElement('p');
-  const time = document.createElement('p');
+  const name = document.createElement(paragraph);
+  const email = document.createElement(paragraph);
+  const phone = document.createElement(paragraph);
+  const service = document.createElement(paragraph);
+  const source = document.createElement(paragraph);
+  const status = document.createElement(paragraph);
+  const date = document.createElement(paragraph);
+  const time = document.createElement(paragraph);
   const btnDiv = document.createElement('article');
   const delBtn = document.createElement('button');
   const editBtn = document.createElement('button');
   //TODO: Use object destructuring to simplify the code
 
   // Create spans for each user detail
-  const nameSpan = document.createElement('span');
-  const emailSpan = document.createElement('span');
-  const phoneSpan = document.createElement('span');
-  const sourceSpan = document.createElement('span');
-  const serviceSpan = document.createElement('span');
-  const dateSpan = document.createElement('span');
-  const timeSpan = document.createElement('span');
-  const statusSpan = document.createElement('span');
+  const nameSpan = document.createElement(span);
+  const emailSpan = document.createElement(span);
+  const phoneSpan = document.createElement(span);
+  const sourceSpan = document.createElement(span);
+  const serviceSpan = document.createElement(span);
+  const dateSpan = document.createElement(span);
+  const timeSpan = document.createElement(span);
+  const statusSpan = document.createElement(span);
 
   nameSpan.textContent = 'Name:';
   emailSpan.textContent = 'Email:';  
