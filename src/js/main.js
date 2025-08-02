@@ -155,6 +155,7 @@ function createList(user){
   const btnDiv = document.createElement('article');
   const delBtn = document.createElement('button');
   const editBtn = document.createElement('button');
+  //TODO: Use object destructuring to simplify the code
 
   // Create spans for each user detail
   const nameSpan = document.createElement('span');
