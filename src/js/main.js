@@ -1,15 +1,17 @@
 import '../css/style.css'
-import CreateLead from './CreateLead'
+import CreateLead from './CreateLead';
+import {
+  formInputs,
+  formUpdateInputs,
+  updateBtn,
+  submitBtn,
+  leadsList,
+  updateForm,
+  leadForm,
+  exportBtn
+} from './DOM.js';
 
 
-const formInputs = document.querySelectorAll('.formInput'); //All input elements in the DOM
-const formUpdateInputs = document.querySelectorAll('.formUpdateInput');
-const updateBtn = document.querySelector('#updateBtn');
-const submitBtn = document.querySelector('#submitBtn');
-const leadsList = document.querySelector('#leadsList');
-const updateForm = document.querySelector('#updateForm');
-const leadForm = document.querySelector('#leadForm');
-const exportBtn = document.querySelector('#exportBtn');
 
 let currentUserId = null; //To be used when updating the dshboard
 
