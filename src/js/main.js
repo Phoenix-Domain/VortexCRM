@@ -1,7 +1,7 @@
 import '../css/style.css'
 
 
-class MakeUser {
+class CreateLead {
   constructor(name,email,phone,service,source,status,date,time, id=crypto.randomUUID()){
     this.id = id;
     this.name = name;
@@ -30,7 +30,7 @@ let currentUserId = null; //To be used when updating the dshboard
 let userArray = getItem() || [];
 
 if(userArray.length <= 0){
-  let user = new MakeUser('Batubo Victory','victorybatubo76@gmail.com','08012345678','Web Development','Google','Pending','2023-10-01','10:00');
+  let user = new CreateLead('Batubo Victory','victorybatubo76@gmail.com','08012345678','Web Development','Google','Pending','2023-10-01','10:00');
 
   createList(user);
 
@@ -55,7 +55,7 @@ submitBtn.addEventListener('click', e => {
     alert('Please fill in all fields');
     return;
   } else{
-    let user = new MakeUser(name,email,phone,service,source,status,date,time);
+    let user = new CreateLead(name,email,phone,service,source,status,date,time);
 
   createList(user);
 
@@ -82,7 +82,7 @@ updateBtn.addEventListener('click', e => {
   const date = formUpdateInputs[6].value.trim();
   const time = formUpdateInputs[7].value.trim();
 
-  let updatedUser = new MakeUser(name,email,phone,service,source,status,date,time,currentUserId);
+  let updatedUser = new CreateLead(name,email,phone,service,source,status,date,time,currentUserId);
 
   updateList(updatedUser);
 
