@@ -269,4 +269,4 @@ function getItem(){
 
 function deleteItem(item){
   item.remove();
-}
+}  
