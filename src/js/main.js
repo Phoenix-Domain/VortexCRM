@@ -1,5 +1,5 @@
 import '../css/style.css'
-import CreateLead from './CreateLead';
+import CreateLead from './CreateLead.js';
 import {
   formInputs,
   formUpdateInputs,
