@@ -9,11 +9,11 @@ import {
   updateForm,
   leadForm,
   exportBtn
-} from './DOM.js';
+} from './DOM.js'; //Import DOM elements from DOM.js
 
 
 
-let currentUserId = null; //To be used when updating the dshboard
+let currentUserId = null; //To be used when updating the dashboard
 
 
 let userArray = getItem() || [];
